@@ -61,5 +61,5 @@ summary(m3)
 #Multiple R-squared:  0.8888,	Adjusted R-squared:  0.8876 
 #F-statistic: 741.4 on 5 and 464 DF,  p-value: < 2.2e-16
 
-#y1 = predict(m3,data.frame(df1$GRE_Score+df1$TOEFL_Score+df1$LOR+df1$CGPA+df1$Research))
-#plot(y1,rstandard(m3))
+y1 = predict(m3,data.frame(df1$GRE_Score+df1$TOEFL_Score+df1$LOR+df1$CGPA+df1$Research))
+plot(y1,rstandard(m3))
