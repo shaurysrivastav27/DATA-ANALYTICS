@@ -1,29 +1,32 @@
+df = read_csv("path/Admission.csv")
 df = na.omit(df)
-m2  = lm(df$Chance_of_Admit~df$GRE_Score+df$TOEFL_Score+df$LOR+df$CGPA+df$Research)
+m2  = lm(df$Chance_of_Admit.~,data=df)
 summary(m2)
-
-#Call:
-#lm(formula = df$Chance_of_Admit ~ df$GRE_Score + df$TOEFL_Score + 
-#    df$LOR + df$CGPA + df$Research)
+# Call:
+# lm(formula = df$Chance_of_Admit ~ ., data = df)
 
 #Residuals:
-#     Min        1Q    Median        3Q       Max 
-#-0.266163 -0.023676  0.007726  0.035259  0.158377 
+#      Min        1Q    Median        3Q       Max 
+#-0.266883 -0.022999  0.009031  0.033434  0.156761 
 
 #Coefficients:
-#                 Estimate Std. Error t value Pr(>|t|)    
-#(Intercept)    -1.3412633  0.0990308 -13.544  < 2e-16 ***
-#df$GRE_Score    0.0018845  0.0005023   3.752 0.000196 ***
-#df$TOEFL_Score  0.0030283  0.0008612   3.516 0.000478 ***
-#df$LOR          0.0189524  0.0038053   4.981 8.79e-07 ***
-#df$CGPA         0.1238177  0.0093101  13.299  < 2e-16 ***
-#df$Research     0.0252904  0.0066105   3.826 0.000147 ***
+#                    Estimate Std. Error t value Pr(>|t|)    
+#(Intercept)       -1.2798040  0.1042101 -12.281  < 2e-16 ***
+#GRE_Score          0.0018523  0.0005022   3.689 0.000251 ***
+#TOEFL_Score        0.0027833  0.0008716   3.193 0.001497 ** 
+#University_Rating  0.0060727  0.0038000   1.598 0.110670    
+#SOP                0.0016630  0.0045654   0.364 0.715820    
+#LOR                0.0164008  0.0041514   3.951 8.94e-05 ***
+#CGPA               0.1191327  0.0097052  12.275  < 2e-16 ***
+#Research           0.0244154  0.0066162   3.690 0.000249 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-#Residual standard error: 0.06001 on 491 degrees of freedom
-#Multiple R-squared:  0.822,	Adjusted R-squared:  0.8202 
-#F-statistic: 453.4 on 5 and 491 DF,  p-value: < 2.2e-16
+#Residual standard error: 0.05991 on 489 degrees of freedom
+#Multiple R-squared:  0.8233,	Adjusted R-squared:  0.8208 
+#F-statistic: 325.5 on 7 and 489 DF,  p-value: < 2.2e-16
+
+
 
 y1 = predict(m2,data.frame(df$GRE_Score+df$TOEFL_Score+df$LOR+df$CGPA+df$Research))
 plot(y1,rstandard(m2))
