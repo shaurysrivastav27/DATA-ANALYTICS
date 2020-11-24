@@ -1,4 +1,4 @@
-df = read_csv("path/Admission.csv")
+df = read_csv("path/admission.csv")
 df = na.omit(df)
 m2  = lm(df$Chance_of_Admit.~,data=df)
 summary(m2)
