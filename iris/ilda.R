@@ -16,3 +16,4 @@ df<- read.csv("/home/shaury/Downloads/nptel/Iris.csv")
  score<-mean(pred$class==test$Species)
  score
 
+

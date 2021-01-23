@@ -1,5 +1,7 @@
 iris= read.csv("/home/shaury/Downloads/nptel/Iris.csv")
  set.seed(123)
+ library(MASS)
+ library(caTools)
  sample = sample.split(iris,SplitRatio=0.8)
  test<-subset(iris,sample==FALSE)
  train <-subset(iris,sample==TRUE)
