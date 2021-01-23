@@ -1,0 +1,36 @@
+df<-read.csv("/home/shaury/Downloads/nptel/winequality-red.csv")
+ #View(df)
+ summary(df$quality)
+  plot(df,col=c("red","blue","black","green","pink","yellow")[df$quality])
+ temp<-c(1:1599)
+ #View(temp)
+ df<-cbind(temp,df)
+ #View(df)
+ library(tidyverse)
+ ggplot(df)+geom_point(mapping=aes(df$temp,df$fixed.acidity,col=df$quality))
+ ggplot(df)+geom_point(mapping=aes(df$temp,df$chlorides,col=df$quality))
+ ggplot(df)+geom_point(mapping=aes(df$temp,df$alcohol,col=df$quality))
+ ggplot(df)+geom_point(mapping=aes(df$temp,df$pH,col=df$quality))
+ ggplot(df)+geom_point(mapping=aes(df$temp,df$sulphates,col=df$quality))
+ library(caTools)
+ set.seed(123)
+ sample<-sample.split(df,SplitRatio=0.8)
+ train<-subset(df,sample==TRUE)
+ test<-subset(df,sample==FALSE)
+ library(class)
+ train<-subset(df,sample==TRUE)
+ seq1<-c(1:20)
+mak=0
+f_ind=0
+ for(i in seq1)
+{
+k1<-knn(train,test,train$quality,k=i,prob=FALSE,use.all=TRUE)
+if(mak<mean(test$quality==k1))
+{
+print(mean(test$quality==k1))
+mak=mean(test$quality==k1)
+f_ind=i
+}
+}
+print("optimal choice for k is ")
+print(f_ind)
