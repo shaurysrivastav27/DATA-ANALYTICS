@@ -1,0 +1,32 @@
+
+ train<- read.csv("/home/shaury/Downloads/nptel/titanic/train.csv")
+ test<- read.csv("/home/shaury/Downloads/nptel/titanic/test.csv")
+ View(train)
+ library(tidyverse)
+ train<-na.omit(train)
+ ggplot(train)+geom_point( aes(train$Survived,train$PassengerId,col=Pclass))
+ ggplot(train)+geom_point( aes(train$Survived,train$PassengerId,col=Sex))
+ m1<- glm(train$Survived~ train$Sex+train$Pclass)
+ summary(m1)
+#unsupervised learning as test has no survival column
+ train= test
+ y_pred= predict(m1,train)
+ y_pred=round(y_pred,0)
+ View(y_pred)
+ train<- read.csv("/home/shaury/Downloads/nptel/titanic/train.csv")
+ train=na.omit(train)
+ View(train)
+ y_pred = predict(m1,train)
+ y_pred= round(y_pred,0)
+ table(y_pred,train$Survived)
+ mean(y_pred==train$Survived)
+#lda analysis starts
+ library(class)
+ library(MASS)
+ m2<-lda(train$Survived~train$Pclass+train$Sex)
+ summary(m2)
+ y_pred = predict(m2,train)
+ View(y_pred)
+ table(y_pred$class,train$Survived)
+mean(y_pred==train$Survived)
+
