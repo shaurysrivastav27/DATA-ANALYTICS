@@ -1,6 +1,6 @@
 import pandas as pd
 titanic = pd.read_csv("/home/shaury/Downloads/nptel/titanic/train.csv",delimiter=",")
-titanic
+test = pd.read_csv("/home/shaury/Downloads/nptel/titanic/test.csv")
 
 from plotnine import ggplot,aes,geom_bar
 t = titanic[titanic["Survived"]==1]
@@ -14,10 +14,8 @@ ggplot(t, aes(t["Pclass"], fill=t["Survived"]))+geom_bar()
 
 t = titanic[titanic["Survived"]==0]
 ggplot(t, aes(t["Pclass"], fill=t["Survived"]))+geom_bar()
-
 o = titanic["Sex"]
 p = test["Sex"]
-test = pd.read_csv("/home/shaury/Downloads/nptel/titanic/test.csv")
 l = []
 for i in range(0,len(titanic)):
     if(o[i]=="female"):
@@ -63,3 +61,10 @@ for i in range(1,2):
             var = y_pred
 print(confusion_matrix(var,titanic["Survived"]))
 print(str(rfcdepth)+" "+str(ldatemp)+" "+str(acc))
+lda = LDA(n_components=ldatemp)
+x = lda.fit_transform(x,y)
+x_test = lda.transform(x_test)
+cl= RFC(max_depth=rfcdepth,random_state=0)
+cl.fit(x,y)
+y_pred = cl.predict(x_test)
+print(y_pred)
