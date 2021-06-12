@@ -6,3 +6,6 @@
 ### chance of admission in a college on the basis of TOEFL score and other factors(multivar linear regression)
 ### bonds price prediction (simple linear regression)
 ### red wine - quality of wine prediction (  classification problems using lda ,knn and  logistic regression)
+
+### student mat -predicting the students grades for final sem(multiple linear regression)
+
