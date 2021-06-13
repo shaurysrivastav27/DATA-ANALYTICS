@@ -5,38 +5,38 @@ df = na.omit(df)
 library(tidyverse);
 pl<-ggplot(df,aes(y=Chance_of_Admit))
 
-png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/GRE_Score.png');
-pl1<- pl+ geom_point(aes(GRE_Score,color='Red'));
+png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/images/GRE_Score.png');
+pl1<- pl+ geom_point(aes(GRE_Score));
 print(pl1);
 dev.off();
 
-png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/TOEFL.png');
-pl1<- pl+ geom_point(aes(TOEFL_Score,color='Green'));
+png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/images/TOEFL.png');
+pl1<- pl+ geom_point(aes(TOEFL_Score));
 print(pl1);
 dev.off();
 
-png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/UniRate.png');
-pl1<- pl+ geom_point(aes(University_Rating,color='Blue'));
+png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/images/UniRate.png');
+pl1<- pl+ geom_point(aes(University_Rating));
 print(pl1);
 dev.off();
 
-png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/sop.png');
-pl1<- pl+ geom_point(aes(SOP,color='Red'));
+png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/images/sop.png');
+pl1<- pl+ geom_point(aes(SOP));
 print(pl1);
 dev.off();
 
-png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/lor.png');
-pl1<- pl+ geom_point(aes(LOR,color='Green'));
+png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/images/lor.png');
+pl1<- pl+ geom_point(aes(LOR));
 print(pl1);
 dev.off();
 
-png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/cgpa.png');
-pl1<- pl+ geom_point(aes(CGPA,color='Blue'));
+png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/images/cgpa.png');
+pl1<- pl+ geom_point(aes(CGPA));
 print(pl1);
 dev.off();
 
-png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/research.png');
-pl1<- pl+ geom_point(aes(Research ,color='Red'));
+png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/images/research.png');
+pl1<- pl+ geom_point(aes(Research));
 print(pl1);
 dev.off();
 
@@ -70,7 +70,7 @@ summary(modml)
 
 
 y1 = predict(modml,df);
-png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/rstd1.png');
+png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/images/rstd1.png');
 plot(y1,rstandard(modml));
 abline(h=2,lty=2);
 abline(h=-2,lty=2);
@@ -103,6 +103,6 @@ summary(modml)
 #F-statistic: 741.4 on 5 and 464 DF,  p-value: < 2.2e-16
 
 y1 = predict(modml,df)
-png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/rstd.png');
+png('/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/chance\ of\ admission/images/rstd.png');
 print(plot(y1,rstandard(modml)))
 dev.off();
