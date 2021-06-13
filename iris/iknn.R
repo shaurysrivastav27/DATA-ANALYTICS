@@ -1,4 +1,4 @@
-iris= read.csv("/home/shaury/Downloads/nptel/Iris.csv")
+ iris= read.csv("/home/shaury/Downloads/nptel/Iris.csv")
  set.seed(123)
  library(MASS)
  library(caTools)
