@@ -1,17 +1,38 @@
 df<-read.csv("/home/shaury/Downloads/nptel/winequality-red.csv")
+df<-na.omit(df);
  #View(df)
- summary(df$quality)
-  plot(df,col=c("red","blue","black","green","pink","yellow")[df$quality])
- temp<-c(1:1599)
+	summary(df$quality)
+    temp<-c(1:nrow(df));
  #View(temp)
- df<-cbind(temp,df)
- #View(df)
+ 	df<-cbind(temp,df)
+ #Visualization
  library(tidyverse)
- ggplot(df)+geom_point(mapping=aes(df$temp,df$fixed.acidity,col=df$quality))
- ggplot(df)+geom_point(mapping=aes(df$temp,df$chlorides,col=df$quality))
- ggplot(df)+geom_point(mapping=aes(df$temp,df$alcohol,col=df$quality))
- ggplot(df)+geom_point(mapping=aes(df$temp,df$pH,col=df$quality))
- ggplot(df)+geom_point(mapping=aes(df$temp,df$sulphates,col=df$quality))
+ 	png("/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/WINE_RED/images/fixedacid.png");
+ 	pl<-ggplot(df)+geom_point(mapping=aes(df$temp,df$fixed.acidity,col=quality))+scale_color_gradient(high='red',low='green');
+ 	print(pl);
+ 	dev.off();
+ 	
+ 	png("/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/WINE_RED/images/chlorides.png");
+ 	pl<-ggplot(df)+geom_point(mapping=aes(df$temp,df$chlorides,color=quality))+scale_color_gradient(high='red',low='green');
+ 	print(pl);
+ 	dev.off();
+ 	
+ 	png("/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/WINE_RED/images/alcohol.png");
+ 	pl<-ggplot(df)+geom_point(mapping=aes(df$temp,df$alcohol,color=quality))+scale_color_gradient(high='red',low='green');
+ 	print(pl);
+ 	dev.off();
+ 	
+ 	png("/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/WINE_RED/images/ph.png");
+ 	pl<-ggplot(df)+geom_point(mapping=aes(df$temp,df$pH,color=quality))+scale_color_gradient(high='red',low='green');
+ 	print(pl);
+ 	dev.off();
+ 	
+ 	png("/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/WINE_RED/images/sulphates.png");
+ 	pl<-ggplot(df)+geom_point(mapping=aes(df$temp,df$sulphates,color=quality))+scale_color_gradient(high='red',low='green');
+ 	print(pl);
+ 	dev.off();
+ 	
+#model
  library(caTools)
  set.seed(123)
  sample<-sample.split(df,SplitRatio=0.8)
@@ -23,14 +44,16 @@ df<-read.csv("/home/shaury/Downloads/nptel/winequality-red.csv")
 mak=0
 f_ind=0
  for(i in seq1)
-{
-k1<-knn(train,test,train$quality,k=i,prob=FALSE,use.all=TRUE)
-if(mak<mean(test$quality==k1))
-{
-print(mean(test$quality==k1))
-mak=mean(test$quality==k1)
-f_ind=i
-}
-}
+	{
+		k1<-knn(train,test,train$quality,k=i,prob=FALSE,use.all=TRUE)
+		if(mak<mean(test$quality==k1))
+		{
+			print(mean(test$quality==k1))
+			mak=mean(test$quality==k1)
+			f_ind=i
+			pred<-k1;
+		}
+	}
 print("optimal choice for k is ")
 print(f_ind)
+table(pred,test$quality)
