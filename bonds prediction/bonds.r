@@ -27,8 +27,9 @@ dev.off();
 
 # identify(y1,rstandard(m1)) //identifying point with anamoly behaviour
 # reduced model
-p = c(3,35,4,34) #skewed points or outliers
-df = df[-c(3,35,4,34),]
+library(dplyr)
+p = c(13,35,4,34) #skewed points or outliers
+df = anti_join(df,filter(df,Case %in% c(13,35,4,34)))
 x = df$CouponRate
 y = df$BidPrice
 png("/home/shaury/Desktop/pvsc/data.sci/DATA-ANALYTICS/bonds prediction/xvsy2.png");
