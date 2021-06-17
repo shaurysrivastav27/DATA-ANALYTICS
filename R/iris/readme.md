@@ -8,8 +8,8 @@
 ##### k nearest neighbor
 
 
-![sepal length](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/iris/irispetallength.png)
-![sepal width](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/iris/irispetalwidth.png)
-![petal length](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/iris/irissepallength.png)
-![petal width](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/iris/irissepalwidth.png) 
+![sepal length](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/R/iris/irispetallength.png)
+![sepal width](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/R/iris/irispetalwidth.png)
+![petal length](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/R/iris/irissepallength.png)
+![petal width](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/R/iris/irissepalwidth.png) 
 
