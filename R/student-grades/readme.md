@@ -2,7 +2,7 @@
 ## components 
 #### 1) exploratory data analysis
 #### 2) data visualization
-#### model - glm or logistic regression
+#### model - linear regression
 ![](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/R/student-grades/images/G1lm.png)
 ![](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/R/student-grades/images/G2lm.png)
 ![](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/R/student-grades/images/abs.png)
