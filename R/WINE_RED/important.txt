@@ -1,0 +1,19 @@
+BOOKS
+VIDEO LECTURES
+PICS
+VIDEOS 
+shaury.btech.ec19@iiitranchi.ac.in
+shaurysrivastav35@gmail.com
+sql
+powerbi
+Rstudio
+jupyter
+tensorflow
+octave
+wine
+slack
+ltspice
+sublime
+vlc
+
+
