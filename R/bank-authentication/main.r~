@@ -1,4 +1,4 @@
-library(tidyverse)
+
 dataf<- read.csv('data_banknote_authentication.txt',sep=',',header = T,row.names = NULL)
 id <- seq(1:nrow(dataf))
 dataf<-cbind(id,dataf)
@@ -23,7 +23,7 @@ head(scaled.df)
 scaled.df<-data.frame(scaled.df,dataf$X.Class.)
 head(scaled.df)
 #train-test split
-library(neuralnet)
+
 library(caTools)
 set.seed(101)
 sample<- sample.split(scaled.df,SplitRatio = 0.7)
