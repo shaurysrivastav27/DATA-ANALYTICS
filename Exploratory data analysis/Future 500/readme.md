@@ -1,5 +1,5 @@
 # PROJECT: FINANCIAL REVIEW
-![BREIF](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/Exploratory%20data%20analysis/Future%20500/images/02.png)
+![BREIF](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/Exploratory%20data%20analysis/Future%20500/src/02.png)
 
 
 # PROJECT REPORT:
