@@ -25,4 +25,5 @@
 #### decision trees
 #### random forest
 
+##### src folders contains the source codes
 ##### vis.r -> contains the codes  for visualizations 
