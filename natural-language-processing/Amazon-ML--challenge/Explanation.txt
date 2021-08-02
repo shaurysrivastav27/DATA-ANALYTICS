@@ -1,0 +1,17 @@
+We have used the libraries
+
+1) PANDAS
+2) NUMPY
+3) SEABORN
+4) NLTK
+5) SPACY
+
+Our approach involves the following the:- 
+First we removed the special characters from the dataset, such as {/,&,%,digits}, etc which  were not relevant for the analysis.
+After that we merged the BULLET_POINTS and TITLE columns after converting them into lower case together and dropped the original columns.
+The next step involves the libraries SPACY and NLTK ; we removed the stop words with spacy library and than the non english words with nltk wordnet. After this we applied stemming. Finally we removed all the repeating words using np.unique method.
+
+After that we made a batch of 50 samples each from each BROWSE_NODE_ID. With this final dataset we converted it into vectorizer using the tqdm library.
+Finally we used TruncatedSVD for selecting the most  relevant feattures.
+Finally we used the above sparse matrix to train the model using the algorithm - NAIVE BAYES.
+
