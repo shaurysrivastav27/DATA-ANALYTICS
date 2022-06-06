@@ -1,0 +1,6 @@
+transformers
+pydantic
+fastapi
+celery
+tensorflow
+spacy
