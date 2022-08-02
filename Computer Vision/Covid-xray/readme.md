@@ -24,6 +24,8 @@ After 20 epochs the model has the following results :
 
 
 Attention model's performance on extended dataset:
+
+
 ![Extended performance](https://github.com/shaurysrivastav27/DATA-ANALYTICS/blob/master/Computer%20Vision/Covid-xray/images/attention_extended.png)
 
 ### Final comparisions of the model 
